@@ -5,6 +5,7 @@ import SignForm from '../../components/SignForm';
 import UserCard from '../../components/UserCard';
 import { useSelector, useDispatch } from 'react-redux'
 import { userInitialState, setUser } from '../../store/user'
+import { verifyIfWasChangedUserState } from '../../utils/state-changes'
 import { useAuth } from '../../firebase'
 
 
@@ -18,8 +19,7 @@ const Home = () => {
   const currentUser = useAuth()
 
   useEffect(() => {
-    const loggedCheck = JSON.stringify(userInitialState) === JSON.stringify(user)
-    setLoggedUser(loggedCheck)
+    setLoggedUser(verifyIfWasChangedUserState(userInitialState, user))
     // eslint-disable-next-line
   }, [user])
 
@@ -40,7 +40,7 @@ const Home = () => {
         <Hero />
       </div>
       <div className="fade__in--right">
-        {loggedUser ?
+        {!loggedUser ?
           <SignForm />
           : <UserCard />}
       </div>
