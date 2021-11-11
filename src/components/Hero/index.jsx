@@ -4,6 +4,7 @@ import NewLinks from '../NewLinks'
 import { collection, addDoc, getDocs } from '@firebase/firestore'
 import { db } from '../../firebase'
 import { generateShortLink } from '../../utils'
+import { verifyIfWasChangedUserState } from '../../utils/state-changes'
 import { useSelector, useDispatch } from 'react-redux'
 import { userInitialState, setLinks } from '../../store/user'
 import './styles.css'
@@ -19,7 +20,7 @@ export default function Hero() {
 
   useEffect(() => {
     setShortLinks(user.links || [])
-    setRefreshData(verifyIfWasChangedUserState())
+    setRefreshData(verifyIfWasChangedUserState(userInitialState, user))
     // eslint-disable-next-line 
   }, [user])
 
@@ -44,7 +45,6 @@ export default function Hero() {
 
   const addLink = originalUrl => {
     let list = shortLinks
-    console.log('> hero curList 1: ', shortLinks)
     const value = generateShortLink(originalUrl)
     list = [value, ...list]
     const newLink = user ? { ...value, userUid: user.uid } : { ...value, userUid: '' }
@@ -60,14 +60,6 @@ export default function Hero() {
     dispatch(setLinks({ links: list }))
   }
 
-  const verifyIfWasChangedUserState = () => {
-    const objOne = { ...userInitialState }
-    const objTwo = { ...user }
-    delete objOne['links']
-    delete objTwo['links']
-
-    return JSON.stringify(objOne) !== JSON.stringify(objTwo)
-  }
 
   return (
     <div className="hero__container">
