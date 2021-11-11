@@ -34,7 +34,6 @@ export default function SignForm() {
     }
 
     const handleForm = () => {
-        console.log('> form-error: ', isAValidSign(formPage, signInfo))
         if (isAValidSign(formPage, signInfo)) {
             formPage ?
                 signInAuth(signInfo.email, signInfo.password) :

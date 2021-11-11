@@ -30,7 +30,6 @@ export const userSlice = createSlice({
             }
         },
         setLinks: (state, action) => {
-            console.log('> links/reducer: ', action.payload)
             state.value = {
                 ...state.value,
                 links: action.payload.links

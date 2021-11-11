@@ -22,11 +22,8 @@ export const signInAuth = async (email, password) => {
             email: userInfo.user.email,
         }
         store.dispatch(setUser(curUser))
-        console.log('> login-success: ', userInfo)
     } catch (err) {
         store.dispatch(setError({ error: err.message.replace('Firebase: Error (auth/', '').replace(')', '') }))
-        console.log('> register-currentState: ', currentState)
-
     }
 }
 
@@ -41,11 +38,8 @@ export const signUpAuth = async ({ name, email, password }) => {
         }
 
         store.dispatch(setUser(curUser))
-
-        console.log('> register-success: ', userInfo)
     } catch (err) {
         store.dispatch(setError({ error: err.message.replace('Firebase: Error (auth/', '').replace(')', '') }))
-        console.log('> register-currentState: ', currentState)
     }
 }
 
