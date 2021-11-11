@@ -16,7 +16,9 @@ export default function NewLinks({ link, clipboardText, changeClipboardText }) {
                 <FaRegCopy className="copy__icon" onClick={handleCopyLink} />
                 {link.shortUrl === clipboardText && <span className="copied-link" > <FaRegCheckCircle /> Copied to clipboard</span>}
             </div>
-            <span className="source__link">{link.originalUrl}</span>
+            <div className="source-link__container">
+                <span className="source__link">{link.originalUrl}</span>
+            </div>
         </>
     )
 }

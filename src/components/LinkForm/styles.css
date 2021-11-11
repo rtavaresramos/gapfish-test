@@ -15,7 +15,9 @@
 /* Form wrapper styling */
 
 .search__wrapper {
-  width: 450px;
+  display: flex;
+  max-width: 450px;
+  min-width: 350px;
   margin: 50px auto 50px auto;
   border-radius: 40px;
   background: transparent;
@@ -26,7 +28,7 @@
 
 .search__wrapper input {
   padding-left: 20px;
-  width: 330px;
+  max-width: 330px;
   height: 50px;
   padding: 10px 5px 10px 20px;
   float: left;

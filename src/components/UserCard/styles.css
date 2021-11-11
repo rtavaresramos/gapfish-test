@@ -17,6 +17,9 @@
 
 .user__greeting,
 .user__welcome {
+  max-width: 440px;
+  width: 90%;
+  min-width: 300px;
   font-size: 16px;
   text-align: center;
 }
@@ -44,4 +47,10 @@
 
 .user__signout .signout:hover {
   color: #224d9f;
+}
+
+@media (max-width: 450px) {
+  .user__container--content {
+    transform: translateX(-20px);
+  }
 }

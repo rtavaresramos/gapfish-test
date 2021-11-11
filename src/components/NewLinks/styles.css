@@ -20,6 +20,16 @@ a:hover {
   font-size: 12px;
 }
 
+.source-link__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  min-width: 300px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .source__link {
   font-size: 10px;
   font-style: italic;
