@@ -11,7 +11,6 @@ import { setUser, setError, setUserInitialState } from '../store/user'
 
 
 const user = getAuth()
-const currentState = store.getState()
 
 export const signInAuth = async (email, password) => {
     try {
