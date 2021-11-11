@@ -1,0 +1,59 @@
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  max-width: 640px;
+  min-width: 310px;
+  padding: 10px 0;
+}
+
+h1 {
+  height: 52px;
+  max-width: 603px;
+  min-width: 300px;
+  width: 95%;
+  margin: 20px auto 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2rem;
+  /* or 116% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+p {
+  max-width: 553px;
+  min-width: 300px;
+  width: 90%;
+  margin: 0 auto 20px;
+  font-size: 26px;
+  line-height: 31px;
+  /* or 119% */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #224d9f;
+}
+
+h3 {
+  opacity: 0;
+  color: #224d9f;
+  margin: 4px auto;
+}
+
+h3.active {
+  opacity: 1;
+}
+
+.link-list__container {
+  max-height: 200px;
+  min-height: 100px;
+  overflow-y: scroll;
+}

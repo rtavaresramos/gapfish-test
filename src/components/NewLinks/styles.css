@@ -1,0 +1,27 @@
+.short-link__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+a {
+  margin: 6px 0 2px;
+}
+
+a:hover {
+  color: #00b0ff;
+}
+
+.copy__icon {
+  cursor: pointer;
+}
+
+.copied-link {
+  font-size: 12px;
+}
+
+.source__link {
+  font-size: 10px;
+  font-style: italic;
+  margin-bottom: 4px;
+}

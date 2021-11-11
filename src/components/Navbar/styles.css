@@ -1,0 +1,12 @@
+.nav__container img {
+  max-width: 250px;
+  transform: translateY(-50px);
+}
+.nav__container {
+  height: 100px;
+}
+
+.logo__container {
+  height: 100px;
+  overflow: hidden;
+}

@@ -1,0 +1,56 @@
+.home__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.home__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  min-width: calc(100vw - 10px);
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.home__container .made-with-love {
+  color: #224d9f;
+  font-size: 12px;
+  margin: 0 auto 20px;
+}
+
+.home__content--hero {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInLeftHomeHero 1s ease-in-out 2s forwards;
+}
+
+.fade__in--right {
+  opacity: 0;
+  animation: fadeInRight 1s ease-in-out 2s forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(3000px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeftHomeHero {
+  from {
+    opacity: 0;
+    transform: translateX(-3000px);
+  }
+  to {
+    opacity: 1;
+  }
+}
