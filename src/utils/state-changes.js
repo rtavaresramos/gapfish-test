@@ -1,10 +1,6 @@
 export const verifyIfWasChangedUserState = (userInitialState, user) => {
-    const objOne = { ...userInitialState }
-    const objTwo = { ...user }
-    delete objOne['links']
-    delete objOne['error']
-    delete objTwo['links']
-    delete objTwo['error']
+    const objOne = { uid: userInitialState.uid, name: userInitialState.name, email: userInitialState.email }
+    const objTwo = { uid: user.uid, name: user.name, email: user.email }
 
     return JSON.stringify(objOne) !== JSON.stringify(objTwo)
 }
