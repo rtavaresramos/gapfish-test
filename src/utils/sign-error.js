@@ -6,12 +6,12 @@ export const isAValidSign = (formPage, signInfo) => {
     if (formPage) {
         return (isAValidEmail(email)
             && isAValidPassword(password))
+    } else {
+        return (isAValidEmail(email)
+            && isAValidPassword(password)
+            && isAValidPasswordConfirmation(password, passwordConfirmation))
+            && isAValidName(name)
     }
-
-    return (isAValidEmail(email)
-        && isAValidPassword(password)
-        && isAValidPasswordConfirmation(password, passwordConfirmation))
-        && isAValidName(name)
 }
 
 const isAValidEmail = email => {
@@ -19,8 +19,8 @@ const isAValidEmail = email => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
         return (true)
     }
-    store.dispatch(setError({ error: 'Email not valid' }))
 
+    store.dispatch(setError({ error: 'Email not valid' }))
     return false
 }
 const isAValidPassword = password => {
